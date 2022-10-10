@@ -1,0 +1,16 @@
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #232323;
+  color: white;
+}
+
+input, button {
+  font-family: inherit;
+  color: white;
+  outline: none;
+  border: none;
+  background: none;
+}
