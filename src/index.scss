@@ -1,3 +1,9 @@
+*, *::after, *::before{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
@@ -5,6 +11,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background: #232323;
   color: white;
+  font-size: 14px;
+}
+
+label {
+  font-size: inherit;
 }
 
 input, button {
@@ -13,4 +24,13 @@ input, button {
   outline: none;
   border: none;
   background: none;
+  font-size: 16px;
 }
+
+input {
+  &::placeholder {
+    color: #c7c7c7;
+    opacity: 1;
+  }
+}
+

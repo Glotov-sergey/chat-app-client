@@ -1,0 +1,25 @@
+.form {
+  width: 800px;
+  margin: 0 auto;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.credentialsField {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.link {
+  color: #600df8;
+  cursor: pointer;
+  text-align: center;
+
+  &:hover {
+    color: #5104d3;
+  }
+}
