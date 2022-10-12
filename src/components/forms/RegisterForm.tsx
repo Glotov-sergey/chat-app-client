@@ -8,19 +8,28 @@ import {
 	SubmitBtn
 } from '../../utils/styles';
 import styles from './index.module.scss';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
+import { postRegisterUser } from '../../utils/api';
+import { CreateUserParams } from '../../types/userParams';
 
 const RegisterForm: FC = () => {
 	const {
 		register,
 		handleSubmit,
 		formState: { errors }
-	} = useForm();
+	} = useForm<CreateUserParams>();
+	const navigate = useNavigate();
 
 	console.log(errors);
-	const onSubmit = (data: any) => {
-		console.log('213');
+	const onSubmit = async (data: CreateUserParams) => {
+		console.log(data);
+		try {
+			await postRegisterUser(data);
+			navigate('/conversation');
+		} catch (e) {
+			console.log(e);
+		}
 	};
 
 	return (

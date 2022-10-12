@@ -8,20 +8,27 @@ import {
 	MainTitle,
 	SubmitBtn
 } from '../../utils/styles';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
+import { LoginUserParams } from '../../types/userParams';
+import { postLoginUser } from '../../utils/api';
 
 const LoginForm = () => {
 	const {
 		register,
 		handleSubmit,
 		formState: { errors }
-	} = useForm();
-
+	} = useForm<LoginUserParams>();
+	const navigate = useNavigate();
 	console.log(errors);
 
-	const onSubmit = (data: any) => {
-		console.log(data);
+	const onSubmit = async (data: LoginUserParams) => {
+		try {
+			await postLoginUser(data);
+			navigate('/conversation');
+		} catch (e) {
+			console.log(e);
+		}
 	};
 
 	return (
