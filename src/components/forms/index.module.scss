@@ -1,25 +1,33 @@
 .form {
-  width: 800px;
-  margin: 0 auto;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  gap: 15px;
+	width: 800px;
+	margin: 0 auto;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	gap: 15px;
 }
 
 .credentialsField {
-  display: flex;
-  justify-content: space-between;
-  gap: 15px;
+	display: flex;
+	justify-content: space-between;
+	gap: 15px;
 }
 
 .link {
-  color: #600df8;
-  cursor: pointer;
-  text-align: center;
+	color: #600df8;
+	cursor: pointer;
+	text-align: center;
 
-  &:hover {
-    color: #5104d3;
-  }
+	&:hover {
+		color: #5104d3;
+	}
+}
+
+.createConversationForm {
+	width: 100%;
+}
+
+.inputBlock {
+	margin-bottom: 15px;
 }

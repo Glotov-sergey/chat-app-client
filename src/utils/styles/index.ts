@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { InputContainerProps } from './styleTypes';
 
 export const MainTitle = styled.h1`
 	text-align: center;
@@ -10,8 +11,8 @@ export const InputField = styled.input`
 	margin: 4px 0;
 `;
 
-export const InputContainer = styled.div`
-	background: #131313;
+export const InputContainer = styled.div<InputContainerProps>`
+	background: ${(prop) => prop.backgroundColor || '#131313'};
 	padding: 12px 16px;
 	border-radius: 10px;
 	width: 100%;
@@ -115,5 +116,46 @@ export const ConversationContactBlock = styled.div`
 
 	&:hover {
 		background: #000;
+	}
+`;
+
+export const OverlayStyle = styled.div`
+	height: 100% !important;
+	min-height: 100vh;
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.7);
+	position: fixed;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 99;
+`;
+
+export const ModalContainerStyle = styled.div`
+	background-color: #121212;
+	width: 650px;
+	border-radius: 10px;
+`;
+
+export const ModalHeaderStyle = styled.div`
+	width: 100%;
+	padding: 24px;
+	border-bottom: 1px solid #343434;
+
+	h1 {
+		font-size: 22px;
+	}
+`;
+
+export const ModalContentBodyStyle = styled.div`
+	padding: 24px;
+`;
+
+export const TextField = styled.textarea`
+	width: 100%;
+	margin: 4px 0;
+	resize: none;
+	::-webkit-scrollbar {
+		display: none;
 	}
 `;
