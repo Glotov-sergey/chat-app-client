@@ -141,7 +141,9 @@ export const ModalHeaderStyle = styled.div`
 	width: 100%;
 	padding: 24px;
 	border-bottom: 1px solid #343434;
-
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 	h1 {
 		font-size: 22px;
 	}
